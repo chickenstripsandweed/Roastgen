@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Roast</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            max-width: 80%;
+        }
+        h1 { color: #ff4444; }
+        #roast-text {
+            font-size: 1.5em;
+            margin: 20px 0;
+            min-height: 60px;
+            font-style: italic;
+        }
+        button {
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover { background-color: #cc0000; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>You Look...</h1>
+        <p id="roast-text">Loading your insult...</p>
+        <button onclick="generateRoast()">Another One</button>
+    </div>
+
+    <script>
+        // Array of roasts/insults
+        const roasts = [
+            "Don't care, didnt ask, plus you're gay",
+            "I knew your parents. Ya mama wasnt shit, ya daddy wasnt shit, and guess what? you aint finna be shit neither",
+            "Get off my website ho",
+            "You smell like asshole and cream cheese",
+            "You got a room temperature iq",
+            "You're the reason the gene pool needs a lifeguard.",
+            "I'm not saying you're ugly, but...",
+            "You're like a software update. Whenever I see you, I think 'Not now'",
+            "I bet you like country music",
+            "I dont even have to insult you"
+        ];
+
+        function generateRoast() {
+            // Get random index
+            const randomIndex = Math.floor(Math.random() * roasts.length);
+            // Display roast
+            document.getElementById('roast-text').innerText = '"' + roasts[randomIndex] + '"';
+        }
+
+        // Run on page load
+        generateRoast();
+    </script>
+</body>
+</html>
